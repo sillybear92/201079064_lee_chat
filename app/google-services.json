@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "799814572181",
+    "firebase_url": "https://bbik-chat.firebaseio.com",
+    "project_id": "bbik-chat",
+    "storage_bucket": "bbik-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799814572181:android:82ad9a8880f43828",
+        "android_client_info": {
+          "package_name": "com.example.bbik.a201079064_lee_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799814572181-3rp6s5vspq81e8cq0j4uv7ls0qgljf9k.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "799814572181-3rp6s5vspq81e8cq0j4uv7ls0qgljf9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM5M3auRkn4Zed9f5f9DmjNOO_Cy4-5TQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
