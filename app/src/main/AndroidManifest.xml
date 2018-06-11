@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Wait_Room"/>
-        <activity android:name=".Chat_Room"/>
+        <activity android:name=".Chat_Room"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>

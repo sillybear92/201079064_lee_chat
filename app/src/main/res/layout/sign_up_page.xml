@@ -13,7 +13,8 @@
         android:layout_marginTop="61dp"
         android:gravity="center"
         android:text="PassWd"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_alignLeft="@+id/signup_id" />
 
     <TextView
         android:id="@+id/signup_id"
@@ -24,7 +25,9 @@
         android:layout_marginStart="33dp"
         android:gravity="center"
         android:text="ID"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp" />
 
     <EditText
         android:id="@+id/input_signid"
@@ -33,7 +36,8 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/signup_pw"
         android:hint="ID 입력"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/signup_pw" />
 
     <EditText
         android:id="@+id/input_signpw"
@@ -44,6 +48,7 @@
         android:ems="10"
         android:hint="비밀번호 입력"
         android:inputType="textPassword"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/signup_pw" />
 
 </RelativeLayout>
