@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+// 로그인 화면 구현- 메인화면
 public class Log_in extends AppCompatActivity {
     private Button bt_login;
     private Button bt_signup;
