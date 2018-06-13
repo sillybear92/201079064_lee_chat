@@ -31,28 +31,29 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+// 대기방 구현
 public class Wait_Room extends AppCompatActivity {
 
     private Button create_button;
     private ListView listView;
     private ArrayAdapter<String> arrayAdapter;
-    private ArrayList<String> list_of_room= new ArrayList<>();
+    private ArrayList<String> list_of_room= new ArrayList<>();  // 방 리스트
 
     private String name;
-    private DatabaseReference chat_room = FirebaseDatabase.getInstance().getReference().child("chat_room");
+    private DatabaseReference chat_room = FirebaseDatabase.getInstance().getReference().child("chat_room");  // FireBase의 "chat_room" 테이블을 현 Reference 로 지정.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("대기방");
-        create_button=(Button)findViewById(R.id.SEND_Button);
+        create_button=(Button)findViewById(R.id.SEND_Button);   // 구현한 xml UI 와 연결.
         listView=(ListView)findViewById(R.id.room_List);
-        name = getIntent().getExtras().get("id").toString();
+        name = getIntent().getExtras().get("id").toString();  // Log_in View에서 넘겨 받은 Intent Extra Data.
         arrayAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list_of_room);
         listView.setAdapter(arrayAdapter);
 
-
+        // "방 만들기" 버튼 온 클릭.
         create_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -60,6 +61,7 @@ public class Wait_Room extends AppCompatActivity {
             }
         });
 
+        // chat_room reference DB 에 데이터 수신이 일어날 때 발생하는 이벤트 리스너.
         chat_room.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -82,18 +84,20 @@ public class Wait_Room extends AppCompatActivity {
             }
         });
 
+        // listView 아이템 클릭 시 발생하는 리스너
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(),Chat_Room.class);
-                intent.putExtra("room_name",((TextView)view).getText().toString());
-                intent.putExtra("user_name",name);
+                Intent intent = new Intent(getApplicationContext(),Chat_Room.class);        // Chat_Room View 인텐트 생성.
+                intent.putExtra("room_name",((TextView)view).getText().toString());   // 방 이름 정보 넘김.
+                intent.putExtra("user_name",name);                                    // 사용자 이름 정보 넘김.
                 startActivity(intent);
 
             }
         });
     }
 
+    // "방 만들기" 페이지
     private void CreateRoom_Page(){
         LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final RelativeLayout create_room=(RelativeLayout)vi.inflate(R.layout.create_room,null);
